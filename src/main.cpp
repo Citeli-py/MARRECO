@@ -4,21 +4,21 @@
 
 void setup() {
   pinMode(BUTTON_PIN, INPUT_PULLUP);
+  Keyboard.begin(KeyboardLayout_pt_BR);
 }
 
 void loop() {
   if (digitalRead(BUTTON_PIN) == LOW) {
-    KeyboardABNT2 key = KeyboardABNT2();
 
-    key.press(KEY_LEFT_GUI);
-    key.press('r');
-
-    key.release_all();
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press(KEY_LEFT_CTRL);
+    Keyboard.press('t');
+    Keyboard.releaseAll();
 
     delay(2000);
-    key.println("https://ict.uff.br/");
-    key.press(KEY_RETURN);
-    key.release_all();
-  }
+    Keyboard.println("https://ict.uff.br/");
+    Keyboard.press(KEY_RETURN);
+    Keyboard.releaseAll();
 
+  }
 }
