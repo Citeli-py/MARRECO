@@ -1,4 +1,4 @@
-#include "KeyboardABNT2.hpp"
+#include <Keyboard.h>
 
 #define BUTTON_PIN 2  // Botão ligado ao pino 2 e ao GND
 
